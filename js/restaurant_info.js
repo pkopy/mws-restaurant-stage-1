@@ -159,16 +159,23 @@ createReviewHTML = (review) => {
   
 
   const nameAndDate = document.createElement('div')
+  nameAndDate.className = 'name-and-date'
   nameAndDate.appendChild(name)
   nameAndDate.appendChild(date)
   li.appendChild(nameAndDate)
 
+  const ratingDiv = document.createElement('div')
+  ratingDiv.className = 'rating';
+
   const rating = document.createElement('p');
-  rating.innerHTML = `Rating: ${review.rating}`;
-  li.appendChild(rating);
+  rating.innerHTML = `RATING: ${review.rating}`;
+  ratingDiv.appendChild(rating)
+
+  li.appendChild(ratingDiv);
 
   const comments = document.createElement('p');
   comments.innerHTML = review.comments;
+  comments.className ='comment';
   li.appendChild(comments);
 
   return li;

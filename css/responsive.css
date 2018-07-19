@@ -1,0 +1,14 @@
+@media screen and (max-width: 426px){
+  nav {
+    height: 110px;
+  }
+  .inside #map-container, #restaurant-container {
+    padding: 160px 0 0;
+  }
+
+  .right {
+    font-size: 1.1em;
+  }
+   
+
+}

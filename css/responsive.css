@@ -1,9 +1,9 @@
-@media screen and (max-width: 426px){
+@media screen and (min-width: 442px){
   nav {
-    height: 110px;
+    height: 80px;
   }
   .inside #map-container, #restaurant-container {
-    padding: 160px 0 0;
+    padding: 130px 0 0;
   }
 
   .right {
@@ -14,7 +14,19 @@
 
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 700px) {
+  #restaurants-list {
+    grid-template-columns: auto auto;
+  }
+  #reviews-list {
+    display: grid;
+    grid-template-columns: auto auto;
+    background-color: #f3f3f3;
+    grid-gap: 20px;
+  }
+}
+
+@media screen and (min-width: 950px) {
   #restaurant-container {
     display: flex;
   }
@@ -27,9 +39,12 @@
     padding: 80px;
   }
   #reviews-list {
-    display: grid;
+    
     grid-template-columns: auto auto auto;
-    background-color: #f3f3f3;
-    grid-gap: 20px;
+    
+  }
+
+  #restaurants-list {
+    grid-template-columns: auto auto auto;
   }
 }

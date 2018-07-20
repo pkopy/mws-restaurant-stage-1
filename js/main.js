@@ -11,7 +11,19 @@ document.addEventListener('DOMContentLoaded', (event) => {
   initMap(); // added 
   fetchNeighborhoods();
   fetchCuisines();
+  serWork();
 });
+
+serWork = () => {
+  if (!navigator.serviceWorker) return;
+  
+  navigator.serviceWorker.register('js/index.js').then(function(reg) {
+    console.log('Registration worked!');
+  }).catch(function(reg) {
+    console.log('Registration failed!', reg);
+  });
+  
+}
 
 /**
  * Fetch all neighborhoods and set their HTML.

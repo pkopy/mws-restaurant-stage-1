@@ -18,10 +18,11 @@ serWork = () => {
   if (!navigator.serviceWorker) return;
   
   navigator.serviceWorker.register('/index.js').then(function(reg) {
-    console.log('Registration worked!');
+    
   }).catch(function(reg) {
     console.log('Registration failed!');
   });
+  navigator.serviceWorker.addEventListener('controllerchange', () => window.location.reload())
   
 }
 

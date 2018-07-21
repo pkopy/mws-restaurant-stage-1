@@ -4,7 +4,7 @@
         console.log(event.request)
         event.respondWith(
             new Response('Hello word')
-        )
+        );
     })
        
     //     event.respondWith(

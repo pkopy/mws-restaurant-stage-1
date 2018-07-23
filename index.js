@@ -5,6 +5,7 @@ self.addEventListener('install', (event) => {
             return cache.addAll(
                 [
                     '/',
+                    '/404.html',
                     'js/main.js',
                     'js/dbhelper.js',
                     'js/restaurant_info.js',
@@ -33,7 +34,9 @@ self.addEventListener('activate', event => {
 });
 
 self.addEventListener('fetch', (event) => {
+    
     event.respondWith(
+        
         caches.match(event.request).then((response) => {
 
             if (response) {
@@ -43,10 +46,11 @@ self.addEventListener('fetch', (event) => {
                 caches.open('mws-restaurant-v1').then((cache) => {
                     return cache.addAll([event.request.url])
                 })
-
+            
                 return fetch(event.request)
             }
 
         })
+        
     )
 })
